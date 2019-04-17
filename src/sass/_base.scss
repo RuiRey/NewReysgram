@@ -1,0 +1,46 @@
+$color-pink-1: #EDD0D5;
+$color-pink-2: #E1CCD1;
+$color-pink-3: #E1D5D7;
+
+$color-grey-1: #A7A7A7;
+$color-grey-2: #D4D3CF;
+
+$color-purple-1: #7A7182;
+$color-purple-2: #CBBFD3;
+$color-purple-3:#F1E3FA;
+
+// RESPONSIVE Breakpoints
+$bp-largest: 75em; //1200px
+$bp-large: 62em; //1000px / 16px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; 
+
+    @media only screen and (max-width:$bp-largest) {
+        font-size: 50%; 
+    }
+
+    @media only screen and (max-width:$bp-small) {
+        font-size: 37.5%;
+    }
+}
+
+body{
+    font-family: 'Righteous', cursive, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+
+    box-sizing: border-box;
+}

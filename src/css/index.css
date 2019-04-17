@@ -6,11 +6,89 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
-  background-color: lightcoral; }
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 37.5%; } }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Righteous', cursive, sans-serif;
   font-weight: 400;
   line-height: 1.7;
   box-sizing: border-box; }
+
+.header {
+  height: 7rem;
+  background-color: #EDD0D5;
+  border-bottom: 1px solid var(--color-pink-2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.8rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100; }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      justify-content: space-around; } }
+  .header__logo-box {
+    display: flex;
+    align-items: center; }
+  .header__logo-img {
+    height: 3.25rem;
+    margin-right: .5rem; }
+  .header__logo-text {
+    font-size: 2.5rem; }
+  .header__link:link, .header__link:visited {
+    text-decoration: none;
+    color: white;
+    transition: all .3s;
+    box-shadow: 0.2rem 0.2rem 0.2rem #D4D3CF;
+    border-radius: 80%; }
+  .header__link:hover, .header__link:active {
+    color: #A7A7A7;
+    transform: scale(1.1);
+    box-shadow: 0.5rem 0.5rem 0.5rem #D4D3CF; }
+
+#joinfree {
+  color: #A7A7A7;
+  font-size: 1.2em;
+  box-shadow: 0.5rem 0.5rem 0.5rem #D4D3CF; }
+
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+.dropbtn {
+  border: none;
+  background-color: #EDD0D5;
+  font-size: inherit;
+  font-family: inherit;
+  color: #A7A7A7;
+  box-shadow: 0.2rem 0.2rem 0.2rem #D4D3CF;
+  border-radius: 80%; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 99; }
+
+.dropdown-content a {
+  color: #A7A7A7;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 1.5rem; }
+
+.dropdown-content a:hover {
+  background-color: #ddd; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }

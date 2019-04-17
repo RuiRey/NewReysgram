@@ -15,17 +15,26 @@ class Header extends Component {
           if(this.props.auth.uid){
               return(
                 <React.Fragment>
-                  <li><a href={`/home/${this.props.auth.uid}`}>Welcome: {this.props.profile.username} <span className="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                  {/* <a href={`/home/${this.props.auth.uid}`} className="header__link">Your Photos - {this.props.profile.username}</a>
                    
                    <li className="dropdown">
                         <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile <span className="caret"></span></a>
                         <ul className="dropdown-menu">
                           <li><a href={`/editprofile/${this.props.auth.uid}`}>Edit Your Profile</a></li>
                           <li><a href={`/changepassword/${this.props.auth.uid}`}>Change Password</a></li>
-                        </ul>
-                      </li>
+                      </ul>
+                    </li> */}
 
-                  <li><a href="/" onClick={logOut}>Log Out <span className="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                    <div className="dropdown">
+                      <button className="dropbtn">Your Account</button>
+                      <div className="dropdown-content">
+                        <a href={`/home/${this.props.auth.uid}`}>Your Photos</a>
+                        <a href={`/editprofile/${this.props.auth.uid}`}>Edit Your Profile</a>
+                        <a href={`/changepassword/${this.props.auth.uid}`}>Change Password</a>
+                      </div>
+                    </div>
+
+                  <a href="/" onClick={logOut} className="header__link">Log Out: {this.props.profile.username}</a>
                 </React.Fragment>
               );
           }else{
@@ -33,36 +42,22 @@ class Header extends Component {
                 <React.Fragment>
                       {/* <a href="/login">LogIn</a>&nbsp; <span>or</span> &nbsp;
                       <a href="/signup">Sign Up</a> */}
-                      <li><a href="/signup">Sign Up <i className="fa fa-user-plus" aria-hidden="true"></i></a></li>
-					            <li><a href="/login">Login <span className="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
+					            <a href="/login" className="header__link">LogIn</a>
+                      <a href="/signup" className="header__link" id="joinfree">Join free</a>
                 </React.Fragment>
               );
           }
       }
 
     return (
-      <nav className="navbar navbar-inverse navbar-fixed-top">
-	    	<div className="container">
-	    		<div className="navbar-header">
-	    			 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-	            <span className="sr-only">Toggle navigation</span>
-	            <span className="icon-bar"></span>
-	            <span className="icon-bar"></span>
-	            <span className="icon-bar"></span>
-	          </button>
-            {/* <img src={rw} className="App-logo" alt="logo" /> */}
-	    			<a href={"/"} className="navbar-brand"><img src={rw} className="App-logo" alt="logo" /> Reysgram</a>
-	    		</div>
-	    		<div className="collapse navbar-collapse" id="bs-nav-demo">
-            <ul class="nav navbar-nav">
-				    	<li><a href="/">Home</a></li>
-				    	<li><a href="/contact">Contact</a></li>
-				    </ul> 
-	    			<ul className="nav navbar-nav navbar-right">
-              {renderLogin()}
-	    			</ul>
-	    		</div>
-	    	</div>
+      <nav className="header">
+        <a href={"/"} className="header__logo-box header__link">
+          <img src={rw} className="header__logo-img" alt="logo"/>
+          <div className="header__logo-text">Reysgram</div>
+        </a>
+        <a href="/" className="header__home header__link">Home</a>
+        <a href="/contact" className="header__contact header__link">Contact</a>
+        {renderLogin()}
 	    </nav>
     );
   }
