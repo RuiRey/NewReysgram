@@ -27,12 +27,19 @@ const PhotoGrid = ({ history,auth, posts, firebase, match, profile }) =>{
         if(!auth.uid){
             return(
                 <div className="jumbotron">
-			        <h1><i className="fa fa-camera-retro" aria-hidden="true"></i> Join Reysgram</h1>
+                    <div className="jumbotron__heading-box">
+                        <h1 className="heading-primary">
+                            <span className="heading-primary--main">Join Reysgram</span>
+                            <span className="heading-primary--sub">Upload Your Beautiful Photos</span>
+                        </h1>
+                    </div>
+
+			        {/* <h1><i className="fa fa-camera-retro" aria-hidden="true"></i> Join Reysgram</h1>
 			        <h2>Upload Your Beautiful Photos</h2>
                     <h4>
                         <a href="/signup">Sign Up</a> &nbsp;or &nbsp;
                         <a href="/login">Login</a>
-                    </h4>
+                    </h4> */}
 		        </div>
             );
         }
