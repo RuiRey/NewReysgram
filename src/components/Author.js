@@ -60,6 +60,7 @@ const Author = ({ firebase, posts, auth, profile, history, match, autherProfile 
                 <div className="jumbotron">
 		            <div className="jumbotron__heading-box">
                         <h1 className="heading-primary">
+                            <img src={camera} alt=""/>
                             <span className="heading-primary--sub">Beautiful photos created by {authorName}</span>
                         </h1>
                     </div>

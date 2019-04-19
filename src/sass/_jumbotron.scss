@@ -5,6 +5,10 @@
     background-size: cover;
     margin-top: 7rem;
 
+    &__full-page{
+        height: 92vh;
+    }
+
     // &__heading-box{
     //     position: absolute;
     //     top: 35%;
@@ -25,7 +29,6 @@
 
 .heading-primary {
     color: #601029;
-    text-transform: uppercase;
     backface-visibility: hidden;
     text-align: center;
 
@@ -34,13 +37,12 @@
         font-size: 6.5rem;
         font-weight: 400;
         letter-spacing: 2rem;
+        text-transform: uppercase;
 
         @media only screen and (max-width:$bp-small) {
             font-size: 4.5rem;
             letter-spacing: 1rem;
-
         }
-
     }
 
     &--sub{
@@ -48,10 +50,35 @@
         font-size: 2.5rem;
         font-weight: 700;
         letter-spacing: 1rem;
+        text-transform: uppercase;
 
         @media only screen and (max-width:$bp-small) {
             font-size: 1.5rem;
             letter-spacing: .5rem;
+        }
+    }
+
+    &--third{
+        display: block;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        letter-spacing: .5rem;
+
+        @media only screen and (max-width:$bp-small) {
+            font-size: 1rem;
+            letter-spacing: .4rem;
+        }
+    }
+
+    &--link:link,
+    &--link:visited{
+        color: $color-red-dark;
+        letter-spacing: .35rem;
+
+        @media only screen and (max-width:$bp-small) {
+            font-size: 1rem;
+            letter-spacing: .3rem;
         }
     }
 }
