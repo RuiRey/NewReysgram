@@ -15,10 +15,8 @@ const Author = ({ firebase, posts, auth, profile, history, match, autherProfile 
             ? 'Photo list is empty, Add New Photo please.'
             : Object.keys(posts[match.params.userId]).map((post, index)=>{
             return(
-                <div className="col-lg-4 col-sm-6">
-                    <div className="thumbnail">
-                        <Photo key={index} post={posts[match.params.userId][post]} postId={post} />
-                    </div>
+                <div className="photo">
+                    <Photo key={index} post={posts[match.params.userId][post]} postId={post} />
                 </div>
             );
         }
@@ -47,17 +45,21 @@ const Author = ({ firebase, posts, auth, profile, history, match, autherProfile 
         if(!auth.uid){
             return(
                 <div className="jumbotron">
-		            <h2><i className="fa fa-camera-retro" aria-hidden="true"></i> {authorName}</h2>
-		            <h4>Beautiful high-quality photos created by {authorName}.</h4>
-                    <hr/>
+                    <div className="jumbotron__heading-box">
+                        <h1 className="heading-primary">
+                            <span className="heading-primary--sub">Beautiful photos created by {authorName}</span>
+                        </h1>
+                    </div>
 		        </div>
             );
         }else if(auth.uid !== match.params.userId){
             return(
                 <div className="jumbotron">
-		            <h2><i className="fa fa-camera-retro" aria-hidden="true"></i> {authorName}</h2>
-		            <h4>Beautiful high-quality photos created by {authorName}.</h4>
-                    <hr/>
+		            <div className="jumbotron__heading-box">
+                        <h1 className="heading-primary">
+                            <span className="heading-primary--sub">Beautiful photos created by {authorName}</span>
+                        </h1>
+                    </div>
 		        </div>
             );
         }
@@ -69,7 +71,7 @@ const Author = ({ firebase, posts, auth, profile, history, match, autherProfile 
         {renderJumbotron()}
         <div className="container">
             {renderAddNewPhoto()}
-            <div className="row">
+            <div className="photos">
                 {photoList}
             </div>
         </div>

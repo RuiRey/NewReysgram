@@ -113,8 +113,11 @@ class Photo extends React.Component{
                 <a href={`/view/${post.authorUid}/${postId}`} className="photo__comments">
                     Comments:{' '}{commentL}
                 </a>
-        
-                {renderDeleteButton()}                  
+
+                <div>
+                    {renderDeleteButton()}   
+                </div>
+                               
             </React.Fragment>
         );
     }

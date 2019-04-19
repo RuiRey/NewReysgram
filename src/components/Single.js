@@ -34,11 +34,9 @@ const Single =({posts, firebase,match, auth, profile, history, comments, replyCo
             <Header />
             <div className="container">
 
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="thumbnail singlephoto">
-                        { singlePhoto }
-                    </div>
+            <div className="photos">
+                <div className="photo">
+                    { singlePhoto }
                 </div>
             </div>
                 

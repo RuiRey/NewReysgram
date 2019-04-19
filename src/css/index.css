@@ -20,6 +20,11 @@ body {
   line-height: 1.7;
   box-sizing: border-box; }
 
+.container {
+  max-width: 160rem;
+  margin-left: auto;
+  margin-right: auto; }
+
 .header {
   height: 7rem;
   background-color: #EDD0D5;
@@ -94,7 +99,7 @@ body {
   display: block; }
 
 .photos {
-  margin: 9rem 12rem;
+  margin: 9rem 10rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 8rem; }
@@ -156,7 +161,7 @@ body {
 .jumbotron {
   width: 100vw;
   height: 73vh;
-  background-image: linear-gradient(to right bottom, rgba(167, 167, 167, 0.5), rgba(167, 167, 167, 0.5)), url(../img/Jumbotron.jpeg);
+  background-image: linear-gradient(to right bottom, rgba(237, 208, 213, 0.6), rgba(237, 208, 213, 0.6)), url(../img/Jumbotron.jpeg);
   background-size: cover;
   margin-top: 7rem;
   display: grid;

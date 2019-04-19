@@ -47,10 +47,12 @@ const PhotoGrid = ({ history,auth, posts, firebase, match, profile }) =>{
         <React.Fragment>
             <Header />
             {renderJumbotron()}
-
-            <div className="photos">
-                {postsList}
-            </div>     
+            <div className="container">
+                <div className="photos">
+                    {postsList}
+                </div>
+            </div>
+                 
         </React.Fragment>
     )
 }
