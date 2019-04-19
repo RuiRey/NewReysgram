@@ -4,10 +4,13 @@ $color-pink-3: #E1D5D7;
 
 $color-gray-1: #A7A7A7;
 $color-gray-2: #D4D3CF;
+$color-gray-3: #f9f7f6;
 
 $color-purple-1: #7A7182;
 $color-purple-2: #CBBFD3;
 $color-purple-3:#F1E3FA;
+
+$color-red-dark: #601029;
 
 // RESPONSIVE Breakpoints
 $bp-largest: 75em; //1200px
@@ -43,38 +46,4 @@ body{
     line-height: 1.7;
 
     box-sizing: border-box;
-}
-
-.heading-primary {
-    color: #601029;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-
-    &--main{
-        display: block;
-        font-size: 6.5rem;
-        font-weight: 400;
-        letter-spacing: 2rem;
-        text-align: center;
-
-        @media only screen and (max-width:$bp-small) {
-            font-size: 4.5rem;
-            letter-spacing: 1rem;
-
-        }
-
-    }
-
-    &--sub{
-        display: block;
-        font-size: 2.5rem;
-        font-weight: 700;
-        letter-spacing: 1rem;
-        text-align: center;
-
-        @media only screen and (max-width:$bp-small) {
-            font-size: 1.5rem;
-            letter-spacing: .5rem;
-        }
-    }
 }

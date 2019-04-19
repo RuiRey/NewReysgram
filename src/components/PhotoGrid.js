@@ -14,10 +14,8 @@ const PhotoGrid = ({ history,auth, posts, firebase, match, profile }) =>{
         : Object.keys(posts).map((uid)=>{
             return(Object.keys(posts[uid]).map((post)=>{
                 return(
-                    <div className="col-lg-4 col-sm-6">
-                        <div className="thumbnail">
-                            <Photo post={posts[uid][post]} postId={post} />
-                        </div>
+                    <div className="photo">
+                        <Photo post={posts[uid][post]} postId={post} />
                     </div>
                 );
             }))
@@ -49,12 +47,10 @@ const PhotoGrid = ({ history,auth, posts, firebase, match, profile }) =>{
         <React.Fragment>
             <Header />
             {renderJumbotron()}
-            <div className="container">
-                <div className="row display-flex">
-                    {postsList}
-                </div>
-             </div>
-             
+
+            <div className="photos">
+                {postsList}
+            </div>     
         </React.Fragment>
     )
 }

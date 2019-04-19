@@ -1,7 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { compose } from 'redux'
-import { firebaseConnect } from 'react-redux-firebase'
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { firebaseConnect } from 'react-redux-firebase';
+import heart from '../img/icons8-love-16.png';
 
 
 class Photo extends React.Component{
@@ -13,13 +14,16 @@ class Photo extends React.Component{
         const renderDeleteButton = ()=>{
             if(owner){
                 return(
-                    <button className="threebtn btn btn-warning" onClick={()=>firebase.remove(`/posts/${post.authorUid}/${postId}`)} >Delete-Post</button>
+                    <div className="photo__delete" onClick={()=>firebase.remove(`/posts/${post.authorUid}/${postId}`)}>
+                        Delete-Post
+                    </div>
+                    //<button className="threebtn btn btn-warning" onClick={()=>firebase.remove(`/posts/${post.authorUid}/${postId}`)} >Delete-Post</button>
                 )
             }
         }
 
         const likePhoto = (e)=>{
-            e.preventDefault();
+            //e.preventDefault();
             if(post.likes && post.likes[auth.uid]){
                 firebase.remove(`/posts/${post.authorUid}/${postId}/likes/${auth.uid}`);
             }else{
@@ -27,18 +31,22 @@ class Photo extends React.Component{
             }
         }
 
+        const loginPlease =(e)=>{
+            alert("LogIn to Like this Pohto!");
+        }
+
         const renderLikeButton = ()=>{
             if(auth.uid){
                 return(
-                    <button onClick={likePhoto} className=" threebtn btn btn-danger" >
-                        <span className="glyphicon glyphicon-heart" aria-hidden="true"></span> {likeCount}
-                    </button>
+                    <div className="photo__like" onClick={likePhoto}>
+                        <img src={heart} className="photo__like-heart" alt="Like"/> {likeCount}
+                    </div>
                 );
             }else{
                 return(
-                    <button disabled="disabled" className=" threebtn btn btn-danger" >
-                        <span className="glyphicon glyphicon-heart" aria-hidden="true"></span> {likeCount}
-                    </button>
+                    <div className="photo__like" onClick={loginPlease}>
+                        <img src={heart} className="photo__like-heart" alt="Like"/> {likeCount}
+                    </div>
                 );
             }
         }
@@ -86,25 +94,27 @@ class Photo extends React.Component{
         
         return(
             <React.Fragment>
-                <a href={`/view/${post.authorUid}/${postId}`} >
-                    <img className="img-rounded" src={post.display_src} alt={post.caption}/>
+                <a className="photo__link" href={`/view/${post.authorUid}/${postId}`} >
+                    <img className="photo__link-img" src={post.display_src} alt={post.caption}/>
                 </a>
-                <div className="caption">
-                    <a href={`/home/${post.authorUid}`} className="author">
-                        Author: {post.author}
-                    </a>
-                    <p>
-                        {likeList}
-                    </p> 
-                    <h3>{post.caption}</h3>
-                    <p>
-                        {renderLikeButton()} 
-                        <a href={`/view/${post.authorUid}/${postId}`} className="threebtn btn btn-primary" role="button">
-                            Comments:{' '}{commentL}
-                        </a>
-                        {renderDeleteButton()}
-                    </p>                    
-                </div>
+                
+                <a href={`/home/${post.authorUid}`} className="photo__author">
+                    Author: {post.author}
+                </a>
+
+                <p>
+                    {likeList}
+                </p> 
+
+                <h3 className="photo__caption">{post.caption}</h3>
+
+                {renderLikeButton()} 
+                    
+                <a href={`/view/${post.authorUid}/${postId}`} className="photo__comments">
+                    Comments:{' '}{commentL}
+                </a>
+        
+                {renderDeleteButton()}                  
             </React.Fragment>
         );
     }

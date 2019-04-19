@@ -20,31 +20,6 @@ body {
   line-height: 1.7;
   box-sizing: border-box; }
 
-.heading-primary {
-  color: #601029;
-  text-transform: uppercase;
-  backface-visibility: hidden; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6.5rem;
-    font-weight: 400;
-    letter-spacing: 2rem;
-    text-align: center; }
-    @media only screen and (max-width: 37.5em) {
-      .heading-primary--main {
-        font-size: 4.5rem;
-        letter-spacing: 1rem; } }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 1rem;
-    text-align: center; }
-    @media only screen and (max-width: 37.5em) {
-      .heading-primary--sub {
-        font-size: 1.5rem;
-        letter-spacing: .5rem; } }
-
 .header {
   height: 7rem;
   background-color: #EDD0D5;
@@ -118,6 +93,66 @@ body {
 .dropdown:hover .dropdown-content {
   display: block; }
 
+.photos {
+  margin: 9rem 12rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 8rem; }
+  @media only screen and (max-width: 37.5em) {
+    .photos {
+      margin: 9rem 1rem; } }
+
+.photo {
+  background-color: #f9f7f6;
+  border-radius: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: start;
+  font-size: 1.5rem; }
+  .photo__link {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1; }
+    .photo__link-img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5%; }
+  .photo__author:link, .photo__author:visited {
+    color: rgba(122, 113, 130, 0.6);
+    transition: all .2s; }
+  .photo__author:hover, .photo__author:active {
+    color: #7A7182;
+    transform: translateY(-2px); }
+  .photo__caption {
+    color: rgba(96, 16, 41, 0.7); }
+  .photo__like, .photo__comments, .photo__delete {
+    padding: .5rem 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10%;
+    color: white;
+    transition: all .3s;
+    cursor: pointer; }
+    .photo__like-heart, .photo__comments-heart, .photo__delete-heart {
+      transform: translateY(2px);
+      margin-right: .5rem; }
+  .photo__like:hover, .photo__comments:hover, .photo__delete:hover {
+    transform: translateY(-2px); }
+  .photo__like {
+    background-color: rgba(237, 208, 213, 0.5); }
+  .photo__like:hover {
+    background-color: rgba(237, 208, 213, 0.8); }
+  .photo__comments {
+    background-color: rgba(203, 191, 211, 0.8); }
+  .photo__comments:hover {
+    background-color: #cbbfd3; }
+  .photo__comments:link {
+    text-decoration: none; }
+  .photo__delete {
+    background-color: rgba(96, 16, 41, 0.5); }
+  .photo__delete:hover {
+    background-color: rgba(96, 16, 41, 0.8); }
+
 .jumbotron {
   width: 100vw;
   height: 73vh;
@@ -129,3 +164,28 @@ body {
   .jumbotron__heading-box {
     grid-row: 2 / 3;
     justify-self: center; }
+
+.heading-primary {
+  color: #601029;
+  text-transform: uppercase;
+  backface-visibility: hidden; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6.5rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    text-align: center; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--main {
+        font-size: 4.5rem;
+        letter-spacing: 1rem; } }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    text-align: center; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--sub {
+        font-size: 1.5rem;
+        letter-spacing: .5rem; } }

@@ -1,0 +1,84 @@
+.photos {
+    margin: 9rem 12rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 8rem;
+
+    @media only screen and (max-width:$bp-small) {
+        margin: 9rem 1rem;
+    }
+}
+
+.photo{
+    background-color: $color-gray-3;
+    border-radius: 5%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+
+    justify-items: center;
+    align-items: start;
+
+    font-size: 1.5rem;
+
+    &__link{
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+
+        &-img{
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5%;
+        }
+    }
+
+    &__author:link,
+    &__author:visited{
+        color: rgba($color-purple-1, $alpha: .6);
+        transition: all .2s;
+    }
+
+    &__author:hover,
+    &__author:active{
+        color: $color-purple-1;
+        transform: translateY(-2px);
+    }
+
+    &__caption{
+        color: rgba($color-red-dark, $alpha: .7);
+    }
+
+    &__like,
+    &__comments,
+    &__delete{
+        padding: .5rem 2rem;
+        margin-bottom: 1rem;
+        border-radius: 10%;
+        color: white;
+        transition: all .3s;
+        cursor: pointer;
+
+        &-heart{
+            transform: translateY(2px);
+            margin-right: .5rem;
+        }
+    }
+
+    &__like:hover,
+    &__comments:hover,
+    &__delete:hover{
+        transform: translateY(-2px);
+    }
+
+    &__like{background-color: rgba($color-pink-1, $alpha: .5);}
+    &__like:hover{background-color: rgba($color-pink-1, $alpha: .8);}
+
+    &__comments{background-color: rgba($color-purple-2, $alpha: .8);}
+    &__comments:hover{background-color: rgba($color-purple-2, $alpha: 1);}
+    &__comments:link{text-decoration: none;}
+
+    &__delete{background-color: rgba($color-red-dark, $alpha: .5);}
+    &__delete:hover{background-color: rgba($color-red-dark, $alpha: .8);}
+}

@@ -22,3 +22,37 @@
     }
 
 }
+
+.heading-primary {
+    color: #601029;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+
+    &--main{
+        display: block;
+        font-size: 6.5rem;
+        font-weight: 400;
+        letter-spacing: 2rem;
+        text-align: center;
+
+        @media only screen and (max-width:$bp-small) {
+            font-size: 4.5rem;
+            letter-spacing: 1rem;
+
+        }
+
+    }
+
+    &--sub{
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 1rem;
+        text-align: center;
+
+        @media only screen and (max-width:$bp-small) {
+            font-size: 1.5rem;
+            letter-spacing: .5rem;
+        }
+    }
+}
