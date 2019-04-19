@@ -2,9 +2,11 @@ import React from 'react';
 import Header from './Header';
 import Photo from './Photo';
 import AddNewPhoto from './AddNewPhoto';
-import { connect } from 'react-redux'
-import { compose } from 'redux'
-import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase';
+
+import camera from "../img/icons-camera.png";
 
 const Author = ({ firebase, posts, auth, profile, history, match, autherProfile }) =>{
     const photoList = !isLoaded(posts)
@@ -47,6 +49,7 @@ const Author = ({ firebase, posts, auth, profile, history, match, autherProfile 
                 <div className="jumbotron">
                     <div className="jumbotron__heading-box">
                         <h1 className="heading-primary">
+                            <img src={camera} alt=""/>
                             <span className="heading-primary--sub">Beautiful photos created by {authorName}</span>
                         </h1>
                     </div>
