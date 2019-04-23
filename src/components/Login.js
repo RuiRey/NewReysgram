@@ -28,30 +28,29 @@ class Login extends React.Component{
         return(
             <React.Fragment>
                 <Header/>
-                <div className="container">
-                <div className="forminmyweb">
-                    <h3>Login Please</h3>
-                    <p>or</p> 
-                    <a href='/resetpassword' className="resetpassword">Forgot Password?</a>
-                    <hr/>
-                    <form className="form-horizontal">
-                      <div className="form-group">
-                        <label htmlFor="loginEmail" className="col-sm-2 control-label">Email</label>
-                        <div className="col-sm-10">
-                          <input type="email" ref="email" className="form-control" id="loginEmail" placeholder="Email" />
-                        </div>
+                <div className="jumbotron jumbotron__full-page">
+                  <div className="jumbotron__first-row">
+                    <h1 className="heading-primary">
+                      <span className="heading-primary--sub">LogIn Please</span>
+                      <span className="heading-primary--sub">or</span>
+                      <a href='/resetpassword' className="heading-primary--link">Forgot Password?</a>
+                    </h1>
+                    
+                    
+                    <form className="form">
+
+                      <div className="form__group">
+                        <input type="email" ref="email" className="form__input" id="loginEmail" placeholder="Email Address" required/>
+                        <label htmlFor="loginEmail" className="form__label">Email Address</label>
                       </div>
-                      <div className="form-group">
-                        <label htmlFor="loginPassword" className="col-sm-2 control-label">Password</label>
-                        <div className="col-sm-10">
-                          <input type="password" ref="password" className="form-control" id="loginPassword" placeholder="Password" />
-                        </div>
+
+                      <div className="form__group">
+                        <input type="password" ref="password" className="form__input" id="loginPassword" placeholder="Password" required/>
+                        <label htmlFor="loginPassword" className="form__label">Password</label>
                       </div>
                         
-                      <div className="form-group">
-                        <div className="col-sm-offset-2 col-sm-10">
-                          <button onClick={logIn} type="submit" className="btn btn-danger btn-lg btn-block">Login</button>
-                        </div>
+                      <div className="form__group">
+                        <button onClick={logIn} type="submit" className="btn">Login</button>
                       </div>
                     </form>
                 </div>

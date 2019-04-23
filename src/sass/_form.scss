@@ -1,0 +1,77 @@
+.form{
+    width: 100rem;
+    padding: 6rem;
+    background-image: linear-gradient(105deg,
+                    rgba(white, .5) 0%,
+                    rgba(white, .5) 50%,
+                    transparent 50%),
+                    url(../img/form-bg.jpeg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(black, .2);
+    margin: 5rem auto 0 auto;
+    
+    @media only screen and (max-width:$bp-large) {
+        width: 65vw;
+        background-image: linear-gradient(105deg,
+                    rgba(white, .5) 0%,
+                    rgba(white, .5) 65%,
+                    transparent 65%),
+                    url(../img/form-bg.jpeg);
+    }
+
+    @media only screen and (max-width:$bp-small) {
+        width: 85vw;
+        background-image: linear-gradient(to right,
+                    rgba(white, .5) 0%,
+                    rgba(white, .5) 100%),
+                    url(../img/form-bg.jpeg);
+    }
+
+    &__group:not(:last-child){
+        margin-bottom: 2rem;
+    }
+
+    &__input{
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        border: none;
+        background-color: rgba(white, .6);
+        font-family: inherit;
+        color: rgba(black, .6);
+        border-bottom: 3px solid transparent;
+        display: block;
+        width: 40%;
+        transition: all .5s;
+
+        @media only screen and (max-width:$bp-large) {
+            width: 65%;
+        }
+    
+        @media only screen and (max-width:$bp-small) {
+            width: 100%;
+        }
+
+        &:focus{
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(black, .2);
+            border-bottom: 3px solid plum;
+        }
+    }
+
+    &__label{
+        font-size: 1.2rem;
+        font-weight: 700;
+        display: block;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+}
