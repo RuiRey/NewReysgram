@@ -62,7 +62,8 @@ body{
     border-radius: 10rem;
     transition: all .3s;
     position: relative;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
 
     border: none;
     cursor: pointer;
@@ -85,7 +86,7 @@ body{
         box-shadow: 0 0.5rem 1rem rgba(black, 0.2);
     }
 
-    background-image: linear-gradient(to right bottom,rgba($color-pink-1, 1), rgba(plum, 1));
+    background-image: linear-gradient(to right bottom,rgba(plum, .5), rgba(	#971F7C, .7));
     color: $color-red-dark;
     &::after{
         background-color: $color-pink-1;

@@ -41,40 +41,34 @@ class SignUp extends React.Component{
         return(
             <React.Fragment>
                 <Header/>
-                <div className="container">
-                <div className="forminmyweb">
-                    <h3>Sign UP</h3>
-                    <p> Set up your Username and Password</p>
-                    <hr/>
-                    <form className="form-horizontal">
-                      <div className="form-group">
-                        <label htmlFor="signupEmail" className="col-sm-2 control-label">Email</label>
-                        <div className="col-sm-10">
-                          <input type="email" ref="email" className="form-control" id="signupEmail" placeholder="Email" />
-                        </div>
+                <div className="jumbotron jumbotron__full-page">
+                  <div className="jumbotron__first-row">
+                    <h1 className="heading-primary">
+                      <span className="heading-primary--sub">Welcome to join Reysgram</span>
+                      <span className="heading-primary--third">Set up your Username and Password</span>
+                    </h1>
+                    
+                    <form className="form">
+                      <div className="form__group">
+                        <input type="email" ref="email" className="form__input" id="signupEmail" placeholder="Email Address" required/>
+                        <label htmlFor="signupEmail" className="form__label">Email Address</label>
                       </div>
 
-                      <div className="form-group">
-                        <label htmlFor="signupUserName" className="col-sm-2 control-label">Username</label>
-                        <div className="col-sm-10">
-                          <input type="text" ref="userName" className="form-control" id="signupUserName" placeholder="Username" />
-                        </div>
+                      <div className="form__group">
+                        <input type="text" ref="userName" className="form__input" id="signupUserName" placeholder="Username" required/>
+                        <label htmlFor="signupUserName" className="form__label">Username</label>
                       </div>
 
-                      <div className="form-group">
-                        <label htmlFor="signupPassword" className="col-sm-2 control-label">Password</label>
-                        <div className="col-sm-10">
-                          <input type="password" ref="password" className="form-control" id="signupPassword" placeholder="Password" />
-                        </div>
+                      <div className="form__group">
+                        <input type="password" ref="password" className="form__input" id="signupPassword" placeholder="Password" required/>
+                        <label htmlFor="signupPassword" className="form__label">Password</label>
                       </div>
                         
-                      <div className="form-group">
-                        <div className="col-sm-offset-2 col-sm-10">
-                          <button onClick={signUp} type="submit" className="btn btn-danger btn-lg btn-block">Sign Up</button>
-                        </div>
+                      <div className="form__group">
+                        <button onClick={signUp} type="submit" className="btn">Sign Up</button>
                       </div>
                     </form>
-                </div>
+                  </div>
                 </div>
                 
             </React.Fragment>
