@@ -19,32 +19,33 @@ class ResetPassword extends React.Component{
         return(
             <React.Fragment>
                  <Header/>
-                 <div className="container">
-                 <div className="resetpasswordform">
-                     <h3>Reset Password</h3>
-                     <p>We can help you reset your password using your email address.</p>
-                     <form className="form-horizontal">
-                       <div className="form-group">
-                         <label htmlFor="email" className="col-sm-2 control-label">Email</label>
-                         <div className="col-sm-10">
-                           <input
+                 <div className="jumbotron jumbotron__full-page">
+                  <div className="jumbotron__first-row">
+                    <h1 className="heading-primary">
+                      <span className="heading-primary--sub">Reset Password</span>
+                      <span className="heading-primary--third">We can help you reset your password using your email address.</span>
+                    </h1>              
+                    
+                     <form className="form">
+                       <div className="form__group">
+                       <input
                                 type="email" 
                                 ref="email"
-                                className="form-control" 
+                                className="form__input" 
                                 id="email" 
                                 placeholder="Email Address" 
+                                required 
                             />
-                         </div>
-                       </div>                      
-                       <div className="form-group">
-                         <div className="col-sm-offset-2 col-sm-10">
-                           <button
+                         <label htmlFor="email" className="form__label">Email Address</label>
+                       </div>
+
+                       <div className="form__group">
+                          <button
                                 onClick={resetPassword}
                                 type="submit" 
-                                className="btn btn-danger btn-lg btn-block"
+                                className="btn"
                             >Reset My Password</button>
-                         </div>
-                       </div>
+                        </div>
                      </form>
                  </div>
                  </div>              
