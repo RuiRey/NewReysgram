@@ -91,6 +91,10 @@ body{
     &::after{
         background-color: $color-pink-1;
     }
+
+    &__not-allowed{
+        cursor: not-allowed;
+    }
 }
 
 .margin__top{

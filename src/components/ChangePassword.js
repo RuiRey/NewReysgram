@@ -43,46 +43,43 @@ class ChangePassword extends React.Component{
         return(
             <React.Fragment>
             <Header/>
-            <div className="container">
-                <div className="forminmyweb">
-                    <h3>Change Your Password</h3>
-                    <form className="form-horizontal" onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="newpassword" className="col-sm-2 control-label">New Password</label>
-                            <div className="col-sm-10">
-                                <input
-                                    value={passwordOne}
-                                    onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
-                                    type="password"
-                                    placeholder="New Password"
-                                    className="form-control"
-                                    id="newpassword"
-                                />
-                            </div>
-                        </div>
+            <div className="jumbotron jumbotron__full-page">
+                <div className="jumbotron__first-row">
+                  <h1 className="heading-primary">
+                    <span className="heading-primary--sub">Change your password</span>
+                  </h1>
+                  
+                  <form className="form" onSubmit={this.onSubmit}>
+                    <div className="form__group">
+                      <input
+                        value={passwordOne}
+                        onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
+                        type="password"
+                        placeholder="New Password"
+                        className="form__input"
+                        id="newpassword"
+                      />
+                      <label htmlFor="newpassword" className="form__label">New Password</label>
+                    </div>
 
-                        <div className="form-group">
-                            <label htmlFor="confirmpassword" className="col-sm-2 control-label">Confirm New Password</label>
-                            <div className="col-sm-10">
-                                <input
-                                    value={passwordTwo}
-                                    onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
-                                    type="password"
-                                    placeholder="Confirm New Password"
-                                    className="form-control"
-                                    id="confirmpassword"
-                                />
-                            </div>
-                        </div>
+                    <div className="form__group">
+                      <input
+                        value={passwordTwo}
+                        onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
+                        type="password"
+                        placeholder="Confirm New Password"
+                        className="form__input"
+                        id="confirmpassword"
+                      />
+                      <label htmlFor="confirmpassword" className="form__label">Confirm New Password</label>
+                    </div>
 
-                        <div className="form-group">
-                            <div className="col-sm-offset-2 col-sm-10">
-                              <button disabled={isInvalid} type="submit" className="btn btn-danger btn-lg btn-block">Reset My Password</button>
-                            </div>
-                        </div>
+                    <div className="form-group">
+                      <button disabled={isInvalid} type="submit" className={"btn " + (isInvalid ? 'btn__not-allowed' : '')}>Reset My Password</button>
+                    </div>
 
-                        { error && <p>{error.message}</p> }
-                    </form>
+                    { error && <p>{error.message}</p> }
+                  </form>
                 </div>
             </div>
             </React.Fragment>

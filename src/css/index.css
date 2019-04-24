@@ -51,6 +51,8 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn::after {
     background-color: #EDD0D5; }
+  .btn__not-allowed {
+    cursor: not-allowed; }
 
 .margin__top {
   margin-top: 5rem; }
