@@ -52,6 +52,9 @@ body {
   .btn::after {
     background-color: #EDD0D5; }
 
+.margin__top {
+  margin-top: 5rem; }
+
 .header {
   height: 7rem;
   background-color: #EDD0D5;
@@ -194,7 +197,7 @@ body {
   display: grid;
   grid-template-rows: repeat(3, 1fr); }
   .jumbotron__full-page {
-    height: 92vh;
+    height: 100vh;
     background-image: linear-gradient(to bottom, #edd0d5, plum); }
   .jumbotron__heading-box {
     grid-row: 2 / 3;

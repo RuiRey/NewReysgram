@@ -56,56 +56,47 @@ class EditProfile extends React.Component{
         return(
             <React.Fragment>
             <Header/>
-            <div className="container">
-                <div className="jumbotron">
-                    <h2 className="title">Your Profile</h2>
-                    <h3>Email: {profile.email}</h3>
-                    <h3>Username: {profile.username}</h3>
-                    {!!profile.phoneNumber && (
-                        <h3>Phone Number: {profile.phoneNumber}</h3>
-                    )}
-                    {!!profile.gender && (
-                        <h3>Gender: {profile.gender}</h3>
-                    )}
-                    <p><a className="btn btn-danger btn-lg gohomebtn" href={`/home/${auth.uid}`} role="button">Go Back to Your Home Page</a></p>
-                </div>
-                <hr/>
-                <div className="forminmyweb">
-                    <h3 className="title">Edit Your Profile</h3>
-                    <form className="form-horizontal">
+            <div className="jumbotron jumbotron__full-page">
+                <div className="jumbotron__first-row">
+                    <h1 className="heading-primary">
+                        <span className="heading-primary--sub">Your Profile</span>
+                        <span className="heading-primary--third">Email: {profile.email}</span>
+                        <span className="heading-primary--third">Username: {profile.username}</span>
+                        {!!profile.phoneNumber && (
+                            <span className="heading-primary--third">Phone Number: {profile.phoneNumber}</span>
+                        )}
+                        {!!profile.gender && (
+                            <span className="heading-primary--third">Gender: {profile.gender}</span>
+                        )}
+                        <a className="btn" href={`/home/${auth.uid}`} role="button">Go Back to Your Home Page</a>
+                    
+                        <span className="heading-primary--sub margin__top">Edit Your Profile</span>
+                    </h1>
 
-                        <div className="form-group">
-                            <label htmlFor="Username" className="col-sm-2 control-label">New Username</label>
-                            <div className="col-sm-10">
-                            <input onChange={handleChange} value={this.state.username} type="text" name="username" className="form-control" id="Username" />
-                            </div>
+                    <form className="form form__simple">
+                        <div className="form__group">
+                            <input onChange={handleChange} value={this.state.username} type="text" name="username" className="form__input form__input-simple" id="Username" />
+                            <label htmlFor="Username" className="form__label">New Username</label>
                         </div>
 
-                        <div className="form-group"> 
-                            <label htmlFor="phoneNumber" className="col-sm-2 control-label">Phone Number</label>
-                            <div className="col-sm-10">
-                            <input onChange={handleChange} value={this.state.phoneNumber || ''} type="number" name="phoneNumber" className="form-control" id="phoneNumber" />
-                            </div>
+                        <div className="form__group">
+                            <input onChange={handleChange} value={this.state.phoneNumber || ''} type="number" name="phoneNumber" className="form__input form__input-simple" id="phoneNumber" />
+                            <label htmlFor="phoneNumber" className="form__label">Phone Number</label>
                         </div>
 
-                        <div className="form-group">
-                        <label htmlFor="gender" className="col-sm-2 control-label">Gender</label>
-                        <div className="col-sm-10">
-                          <select onChange={handleChange} value={this.state.gender || ''} name="gender" className="form-control" id="gender">
-                            <option></option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Secret</option>
-                          </select>
-                        </div>
+                        <div className="form__group">
+                            <select onChange={handleChange} value={this.state.gender || ''} name="gender" className="form__input form__input-simple" id="gender">
+                                <option></option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Secret</option>
+                            </select>
+                            <label htmlFor="gender" className="form__label">Gender</label>
                         </div>
 
-                        <div className="form-group">
-                          <div className="col-sm-offset-2 col-sm-10">
-                            <input onClick={handleEditProfile} type="submit" className="btn btn-danger btn-lg btn-block"/>
-                          </div>
-                        </div>
-                           
+                        <div className="form__group">
+                            <input onClick={handleEditProfile} type="submit" className="btn" value="Updage Profile"/>
+                        </div>   
                     </form>
                 </div>
             </div>
