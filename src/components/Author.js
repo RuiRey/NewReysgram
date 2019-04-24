@@ -29,7 +29,6 @@ const Author = ({ firebase, posts, auth, profile, history, match, autherProfile 
             return(
                 <React.Fragment>
                     <AddNewPhoto auth={auth} profile={profile} />
-                    <hr/>
                 </React.Fragment>
             );
         }
@@ -73,8 +72,8 @@ const Author = ({ firebase, posts, auth, profile, history, match, autherProfile 
         <React.Fragment>
         <Header/>
         {renderJumbotron()}
+        {renderAddNewPhoto()}
         <div className="container">
-            {renderAddNewPhoto()}
             <div className="photos">
                 {photoList}
             </div>
