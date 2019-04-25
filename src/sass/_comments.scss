@@ -1,0 +1,65 @@
+.comments{
+    grid-column: 1 / 4;
+    padding: 5rem;
+    justify-self: self-start;
+    width: 100%;
+
+    &__form{
+        margin-top: 2rem;
+    }
+
+    &__input{
+        
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        border: none;
+        font-family: inherit;
+        color: rgba(black, .6);
+        border-bottom: 3px solid rgba($color: $color-pink-1, $alpha: .6);
+        border-right: 3px solid rgba($color: $color-pink-1, $alpha: .6);
+        display: block;
+        width: 70%;
+        transition: all .3s;
+
+        &-reply{
+            width: initial;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+
+
+        &:focus{
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(black, .3);
+            border-bottom: 3px solid plum;
+            border-right: 3px solid plum;
+        }
+    }
+}
+
+.comment{
+    color: rgba(black, .6);
+
+    &__delete{
+        transform: translateY(-2px);
+    }
+
+    &__delete,
+    &__reply{
+        margin-left: 1rem;
+        padding: .3rem;
+        text-decoration: none;
+        border: none;
+        border-radius: 50%;
+        transition: all .3s;
+        cursor: pointer;
+        background-color: inherit;
+    }
+
+    &__delete:hover,
+    &__reply:hover{
+        transform: scale(2);
+        color: red;
+    }
+}

@@ -12,7 +12,7 @@ class SingleComment extends React.Component{
   renderDelectButton=(comment, userId )=>{
     if((this.props.auth.uid) && (this.props.auth.uid === this.props.post.authorUid || this.props.auth.uid === userId )){
       return(
-        <button onClick={()=>this.props.firebase.remove(`/posts/${this.props.post.authorUid}/${this.props.postId}/comments/${comment}`)} className="remove-comment">&times;</button>
+        <button onClick={()=>this.props.firebase.remove(`/posts/${this.props.post.authorUid}/${this.props.postId}/comments/${comment}`)} className="comment__delete">&times;</button>
       );
     }
   }
@@ -25,7 +25,7 @@ renderReplyComment=()=>{
         onClick={()=>{
           this.setState({inputShow: !this.state.inputShow});
           }}
-        className="remove-comment"
+        className="comment__reply"
       >&crarr;</button>
       </React.Fragment>
     );
@@ -38,7 +38,7 @@ handleInputArea=(comment)=>{
         <form ref="replyCommentForm" className="form-horizontal" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <div className="col-sm-10">
-              <input type="text" ref="comment" className="form-control replyform" placeholder="Add Replay" />
+              <input type="text" ref="comment" className="comments__input comments__input-reply" placeholder="Add Replay" />
             </div>
           </div>
           <input type="submit" hidden />
@@ -64,7 +64,7 @@ renderComment=(singleReply, i)=>{
           <p className="replycomment">
             <strong>{singleReply.user}</strong> reply <strong>{post.comments[comment].user}</strong>
             : {singleReply.text}
-            <button className="remove-comment" onClick={()=>this.handleDelete(i)}>&times;</button>
+            <button className="comment__delete" onClick={()=>this.handleDelete(i)}>&times;</button>
           </p>
         </div>
       )
@@ -83,7 +83,7 @@ handleDelete=(i)=>{
     return (
           <div className="comment">
             <p>
-              <strong>{post.comments[comment].user}</strong>
+              <strong>{post.comments[comment].user}: </strong>
               {post.comments[comment].text}
               {this.handleInputArea()}
               {this.renderReplyComment()}

@@ -10,12 +10,8 @@ class Comments extends React.Component{
   renderInputComment=()=>{
     if(this.props.auth.uid){
       return(
-        <form ref="commentForm" className="form-horizontal" onSubmit={this.handleSubmit}>
-        <div className="form-group">
-          <div className="col-sm-10">
-            <input type="text" ref="comment" className="form-control" placeholder="Add Comment" />
-          </div>
-        </div>
+        <form ref="commentForm" className="comments__form" onSubmit={this.handleSubmit}>
+          <input type="text" ref="comment" className="comments__input" placeholder="Add Comment" />
         <input type="submit" hidden />
       </form>
       );

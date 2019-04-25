@@ -310,3 +310,49 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem); }
+
+.comments {
+  grid-column: 1 / 4;
+  padding: 5rem;
+  justify-self: self-start;
+  width: 100%; }
+  .comments__form {
+    margin-top: 2rem; }
+  .comments__input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    font-family: inherit;
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: 3px solid rgba(237, 208, 213, 0.6);
+    border-right: 3px solid rgba(237, 208, 213, 0.6);
+    display: block;
+    width: 70%;
+    transition: all .3s; }
+    .comments__input-reply {
+      width: initial;
+      font-size: 1rem;
+      padding: 0.5rem; }
+    .comments__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+      border-bottom: 3px solid plum;
+      border-right: 3px solid plum; }
+
+.comment {
+  color: rgba(0, 0, 0, 0.6); }
+  .comment__delete {
+    transform: translateY(-2px); }
+  .comment__delete, .comment__reply {
+    margin-left: 1rem;
+    padding: .3rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 50%;
+    transition: all .3s;
+    cursor: pointer;
+    background-color: inherit; }
+  .comment__delete:hover, .comment__reply:hover {
+    transform: scale(2);
+    color: red; }
